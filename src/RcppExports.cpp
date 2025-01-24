@@ -46,6 +46,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+
+// C_most_nadir
+LogicalVector C_most_nadir(S4 las, List layout);
+RcppExport SEXP _lidR_C_most_nadir(SEXP lasSEXP, SEXP layoutSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< S4 >::type las(lasSEXP);
+    Rcpp::traits::input_parameter< List >::type layout(layoutSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_most_nadir(las, layout));
+    return rcpp_result_gen;
+END_RCPP
+}
+
 // C_count_in_disc
 IntegerVector C_count_in_disc(NumericVector X, NumericVector Y, NumericVector x, NumericVector y, double radius, int ncpu);
 RcppExport SEXP _lidRplugins_C_count_in_disc(SEXP XSEXP, SEXP YSEXP, SEXP xSEXP, SEXP ySEXP, SEXP radiusSEXP, SEXP ncpuSEXP) {
